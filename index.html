@@ -1,43 +1,183 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | My project (5)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tecnopoly · Juego de mesa educativo multijugador</title>
+    <meta name="description" content="Tecnopoly: juego de mesa digital multijugador donde avanzar depende de lo que sabes. Universidad de Córdoba, Licenciatura en Informática.">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="TemplateData/landing.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <!-- ══════════════ Página de bienvenida ══════════════ -->
+    <div id="tp-landing">
+      <header class="tp-nav">
+        <div class="tp-nav__inner">
+          <a class="tp-logo" href="#inicio">TECNO<span>POLY</span></a>
+          <nav class="tp-nav__links">
+            <a href="#como-se-juega">Cómo se juega</a>
+            <a href="#reglas">Reglas</a>
+            <a href="#pedagogia">Propuesta pedagógica</a>
+            <a href="#tecnologias">Tecnologías</a>
+          </nav>
+          <button class="tp-btn tp-btn--small" data-jugar>JUGAR</button>
         </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">My project (5)</div>
+      </header>
+
+      <section class="tp-hero" id="inicio">
+        <div class="tp-hero__bg" role="img" aria-label="Tablero de Tecnopoly con las fichas de los jugadores"></div>
+        <div class="tp-hero__inner">
+          <h1>TECNO<span>POLY</span></h1>
+          <p class="tp-lead">El juego de mesa digital donde avanzar depende de lo que sabes. Compra empresas tecnológicas, responde preguntas de tu asignatura y negocia con tus compañeros para construir tu imperio.</p>
+          <button class="tp-btn" data-jugar>▶&nbsp; JUGAR</button>
+          <div class="tp-hero__chips">
+            <span class="tp-chip">De 2 a 4 jugadores en línea</span>
+            <span class="tp-chip">Se juega en el navegador</span>
+            <span class="tp-chip">Preguntas de tu asignatura</span>
+            <span class="tp-chip">Nota de 1 a 5 al terminar</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cómo se juega -->
+      <section class="tp-section" id="como-se-juega">
+        <p class="tp-eyebrow">Cómo se juega</p>
+        <h2>De la sala al tablero en cinco pasos</h2>
+        <p class="tp-intro">Cada partida reúne de 2 a 4 estudiantes. El anfitrión escoge la asignatura y la categoría de preguntas que el docente preparó, y el tablero hace el resto.</p>
+        <div class="tp-steps">
+          <div class="tp-step"><h3>Crea o únete a una sala</h3><p>Escribe tu nombre y tu código de estudiante o correo. El anfitrión crea la sala y comparte su código de 6 caracteres.</p></div>
+          <div class="tp-step"><h3>Elige qué repasar</h3><p>El anfitrión selecciona la asignatura y una categoría de preguntas, o todas, e inicia la partida.</p></div>
+          <div class="tp-step"><h3>Lanza los dados</h3><p>En tu turno lanza los dados con la barra espaciadora. Tu ficha avanza y la casilla decide lo que pasa.</p></div>
+          <div class="tp-step"><h3>Responde, compra y negocia</h3><p>Responde preguntas, compra propiedades, paga rentas y haz negocios para completar tus grupos.</p></div>
+          <div class="tp-step"><h3>Recibe tu nota</h3><p>Al terminar, cada jugador recibe una nota de 1 a 5 que queda registrada para el docente.</p></div>
+        </div>
+      </section>
+
+      <!-- Reglas -->
+      <section class="tp-section--alt" id="reglas">
+        <div class="tp-wrap">
+          <p class="tp-eyebrow">Reglas del tablero</p>
+          <h2>Lo que necesitas saber para ganar</h2>
+          <p class="tp-intro">Todos empiezan con <strong>1.000 créditos</strong>. El tablero tiene 24 propiedades de empresas tecnológicas agrupadas en 8 grupos, casillas de pregunta, la Salida y la Cárcel.</p>
+          <div class="tp-grid">
+            <div class="tp-card">
+              <h3><i class="tp-dot" style="background:#2f7df6"></i>Preguntas</h3>
+              <p>Al caer en una casilla de pregunta tienes <strong>20 segundos</strong> para responder.</p>
+              <ul><li>Acierto: <strong>+100 créditos</strong>.</li><li>Error o tiempo agotado: <strong>−50 créditos</strong>.</li><li>Algunas preguntas traen imágenes de código o interfaces.</li></ul>
+            </div>
+            <div class="tp-card">
+              <h3><i class="tp-dot" style="background:#34c26b"></i>Propiedades</h3>
+              <p>Compra cualquier propiedad libre en la que caigas. Si caes en la de otro jugador, le pagas la renta automáticamente.</p>
+              <p>Pasar por la Salida te da <strong>200 créditos</strong>.</p>
+            </div>
+            <div class="tp-card">
+              <h3><i class="tp-dot" style="background:#e2574c"></i>Casas y hoteles</h3>
+              <p>Para construir necesitas las <strong>3 propiedades del grupo</strong>.</p>
+              <ul><li>4 casas → 1 hotel → 4 casas más → 2.º hotel.</li><li>Cada casa u hotel cuesta 50, 100, 150 o 200 cr. según el grupo.</li><li>Más construcciones, más renta.</li></ul>
+            </div>
+            <div class="tp-card">
+              <h3><i class="tp-dot" style="background:#a37cf0"></i>Negocios</h3>
+              <p>En tu turno pulsa <strong>NEGOCIAR</strong> para comprarle una propiedad a otro jugador o venderle una tuya, al precio que acuerden.</p>
+              <p>El otro jugador tiene 30 segundos para aceptar o rechazar.</p>
+            </div>
+            <div class="tp-card tp-card--gold">
+              <h3><i class="tp-dot" style="background:#f2c14e"></i>Cartas doradas</h3>
+              <p>Mezcladas con las preguntas hay cartas especiales:</p>
+              <ul><li><strong>¡A la cárcel!</strong> con multa de 100 cr.</li><li><strong>Compra la propiedad que quieras.</strong></li><li><strong>Pierdes el próximo turno.</strong></li><li><strong>Impuesto</strong> del 50 % sobre tus propiedades.</li></ul>
+            </div>
+            <div class="tp-card">
+              <h3><i class="tp-dot" style="background:#f08a3c"></i>Dobles y cárcel</h3>
+              <p>Si sacas dobles, vuelves a tirar. Con <strong>3 dobles seguidos</strong> vas a la cárcel.</p>
+              <p>En la cárcel solo sales sacando dobles; ir a la cárcel cuesta 100 créditos.</p>
+            </div>
+          </div>
+
+          <div class="tp-score">
+            <div>
+              <p class="tp-eyebrow" style="margin:0">Nota final</p>
+              <div class="tp-score__formula">Nota = 1 + 4 × (0,7 · aciertos + 0,3 · patrimonio)</div>
+            </div>
+            <div>
+              <div class="tp-bar"><span></span><span></span></div>
+              <div class="tp-legend"><span><i style="background:#34c26b"></i>70 % respuestas correctas</span><span><i style="background:#f2c14e"></i>30 % patrimonio en el juego</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Propuesta pedagógica -->
+      <section class="tp-section" id="pedagogia">
+        <div class="tp-split">
+          <div>
+            <p class="tp-eyebrow">Propuesta pedagógica</p>
+            <h2>Aprender jugando, con el conocimiento como motor</h2>
+            <p class="tp-intro" style="margin-bottom:24px">En Tecnopoly saber es avanzar: sin responder bien no hay créditos para comprar, construir ni negociar. El juego combina aprendizaje basado en juegos y gamificación con la evaluación del docente.</p>
+            <ul class="tp-list">
+              <li><span class="tp-ico">1</span><span><b>Práctica con retroalimentación inmediata</b>Cada pregunta se corrige al instante, con tiempo límite para afianzar los conceptos clave.</span></li>
+              <li><span class="tp-ico">2</span><span><b>Contenido a cargo del docente</b>Los profesores administran el banco de preguntas por asignatura y categoría, incluidas preguntas con imágenes, desde un panel web.</span></li>
+              <li><span class="tp-ico">3</span><span><b>Motivación: autonomía, competencia y relación</b>Decidir qué comprar y negociar da autonomía; las respuestas y construcciones hacen visible el progreso; y la partida se juega y se discute entre compañeros.</span></li>
+              <li><span class="tp-ico">4</span><span><b>Evaluación integrada</b>La nota final combina el desempeño en las preguntas (70 %) y la toma de decisiones dentro del juego (30 %), y queda registrada por estudiante.</span></li>
+              <li><span class="tp-ico">5</span><span><b>Hecho por estudiantes</b>Tecnopoly lo desarrollan estudiantes de la electiva de Videojuegos de la Licenciatura en Informática como un proyecto real de varias cohortes, apoyado en inteligencia artificial bajo supervisión docente.</span></li>
+            </ul>
+          </div>
+          <img src="TemplateData/pregunta.jpg" alt="Un jugador cae en una casilla de pregunta">
+        </div>
+      </section>
+
+      <!-- Tecnologías -->
+      <section class="tp-section--alt" id="tecnologias">
+        <div class="tp-wrap">
+          <p class="tp-eyebrow">Tecnologías</p>
+          <h2>Cómo está construido</h2>
+          <p class="tp-intro">Un ecosistema completo: el juego en el navegador, un servidor multijugador en tiempo real, una API con base de datos y un panel para los docentes.</p>
+          <div class="tp-tech">
+            <div><em>Juego</em><b>Unity 2023 + C#</b><small>Tablero 3D, fichas, dados y paneles, compilado a WebGL para jugar sin instalar nada.</small></div>
+            <div><em>Multijugador</em><b>Photon PUN 2</b><small>Salas de hasta 4 jugadores, turnos sincronizados y reconexión si se cae la red.</small></div>
+            <div><em>API</em><b>NestJS + MongoDB</b><small>Asignaturas, categorías, preguntas, partidas guardadas y resultados.</small></div>
+            <div><em>Panel docente</em><b>Nuxt 4 + Vuetify</b><small>Gestión del banco de preguntas y consulta de resultados por estudiante.</small></div>
+            <div><em>Imágenes</em><b>Cloudinary</b><small>Almacenamiento y entrega optimizada de las imágenes de las preguntas.</small></div>
+            <div><em>Infraestructura</em><b>Servidor VPS con nginx</b><small>Publicación del juego, la API y el panel con HTTPS y compresión.</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tp-cta">
+        <h2>¿Listo para tu partida?</h2>
+        <p>Reúne a tus compañeros, crea una sala y demuestra lo que sabes.</p>
+        <button class="tp-btn" data-jugar>▶&nbsp; JUGAR</button>
+        <p style="margin-top:22px"><a class="tp-btn tp-btn--ghost tp-btn--small" href="https://tecnopoly.delicocol.com/">Panel docente</a></p>
+      </section>
+
+      <footer class="tp-footer">
+        <div class="tp-footer__inner">
+          <span><b style="color:#e8ecf6">Universidad de Córdoba</b> · Licenciatura en Informática · Electiva de Videojuegos</span>
+          <span>Tecnopoly — juego de mesa digital educativo</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ══════════════ Juego ══════════════ -->
+    <div id="tp-juego">
+      <div id="unity-container">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+        <div id="unity-loading-bar">
+          <div class="tp-load-title">TECNO<span>POLY</span></div>
+          <div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div>
+          <div id="tp-load-text">Cargando el juego…</div>
+        </div>
+        <div id="unity-warning"></div>
+        <button id="unity-fullscreen-button" title="Pantalla completa" aria-label="Pantalla completa">⛶</button>
       </div>
     </div>
-    <script>
 
-      var container = document.querySelector("#unity-container");
+    <script>
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var loadText = document.querySelector("#tp-load-text");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -48,18 +188,16 @@
         if (type == 'error') div.style = 'background: red; padding: 10px;';
         else {
           if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
+          setTimeout(function() { warningBanner.removeChild(div); updateBannerVisibility(); }, 5000);
         }
         updateBannerVisibility();
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/webgl.loader.js?v=77cd37aa";
+      // ?v= cambia con cada build: el loader nunca se toma de una caché vieja
+      var loaderUrl = buildUrl + "/webgl.loader.js?v=ed2e701e";
       var config = {
-        dataUrl: buildUrl + "/77cd37aaee8d58ace6bed8151b4872d8.data",
+        dataUrl: buildUrl + "/ed2e701e2d15c8038169316086b93259.data",
         frameworkUrl: buildUrl + "/87bad00b3501aeac83e04d20772695c2.js",
         codeUrl: buildUrl + "/701192441fb7af65aa89750d6cd48aad.wasm",
         streamingAssetsUrl: "StreamingAssets",
@@ -69,54 +207,34 @@
         showBanner: unityShowBanner,
       };
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+      // El juego solo se descarga e inicia al pulsar JUGAR (o al entrar con #jugar)
+      var iniciado = false;
+      function jugar() {
+        document.body.classList.add("tp-jugando");
+        window.scrollTo(0, 0);
+        if (location.hash !== "#jugar") history.replaceState(null, "", "#jugar");
+        if (iniciado) return;
+        iniciado = true;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        loadingBar.style.display = "block";
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = function () {
+          createUnityInstance(canvas, config, function (progress) {
+            progressBarFull.style.width = 100 * progress + "%";
+            loadText.textContent = progress < 0.9 ? "Cargando el juego… " + Math.round(progress * 100) + " %" : "Preparando el tablero…";
+          }).then(function (unityInstance) {
+            loadingBar.style.display = "none";
+            fullscreenButton.onclick = function () { unityInstance.SetFullscreen(1); };
+          }).catch(function (message) {
+            alert(message);
+          });
+        };
+        document.body.appendChild(script);
       }
 
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
+      document.querySelectorAll("[data-jugar]").forEach(function (b) { b.addEventListener("click", jugar); });
+      if (location.hash === "#jugar") jugar();
     </script>
   </body>
 </html>
